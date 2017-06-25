@@ -1,4 +1,4 @@
-# MakerLab RFID Checkin Electron/Angu;ar App
+# MakerLab RFID Checkin Electron/Angular App
 
 Cross  plaform rfid reader system for the makerlab
 

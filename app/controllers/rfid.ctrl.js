@@ -4,7 +4,6 @@
     function RfidCtrl($scope, logger, serialPort) {
         // This will be the base value.
         // $scope.getPorts = function() {
-$scope.getPorts();
       		//Get the serialport listings
       		// require("serialport").list(function (err, ports) {
           //

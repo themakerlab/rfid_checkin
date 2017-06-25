@@ -44,9 +44,7 @@
 	angular.module('rfidApp').value('logger', logger);
 
 	var SerialPort = require("serialport").SerialPort
-	var serialPort = new SerialPort("/dev/tty.usbserial-A104OOO7",
-												{ baudrate: 9600
-										});
+	var serialPort = new SerialPort("/dev/tty.usbserial-A104OOO7", { baudrate: 9600 });
 
 	// Add serial objects
 	angular.module('rfidApp').value('serialPort', serialPort);
