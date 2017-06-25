@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>MakerLab RFID Checkin</title>
+
+  <link rel="stylesheet" type="text/css" href="../assets/css/index.css">
+
+  <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="../bower_components/angular-route/angular-route.min.js"></script>
+
+  <script type="text/javascript" src="../app/app.js"></script>
+  <script type="text/javascript" src="../app/controllers/SerialPortCtrl.js"></script>
+  <script type="text/javascript" src="../app/controllers/main.ctrl.js"></script>
+  <script type="text/javascript" src="../app/controllers/rfid.ctrl.js"></script>
+</head>
+
+<body class="clear" ng-app="rfidApp" ng-controller="MainController">
+{{ nfcValue }}
+  <!-- Centered Panel -->
+ <div class="clear white-text fill">
+   <div ng-view></div>   
+ </div>
+</body>
+</html>

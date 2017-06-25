@@ -1,0 +1,24 @@
+{
+  "name": "rfidControl",
+  "description": "RFID Raspberry Pi software.",
+  "main": "main.js",
+  "authors": [
+    "Alexii Carey"
+  ],
+  "license": "",
+  "keywords": [
+    "RFID"
+  ],
+  "homepage": "https://github.com/themakerlab/rfid-control",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.6.4"
+  }
+}
