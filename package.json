@@ -24,7 +24,7 @@
   "dependencies": {
     "angular": "=1.6.3",
     "angular-resource": "=1.6.3",
-    "angular-route": "^1.6.4",
+    "angular-route": "^1.6.3",
     "serialport": "~3.1.2",
     "dotenv": "^4.0.0",
     "onoff": "^1.1.2",

@@ -43,8 +43,10 @@
 	// Inject winston into Angular
 	angular.module('rfidApp').value('logger', logger);
 
-	var SerialPort = require("serialport").SerialPort
-	var serialPort = new SerialPort("/dev/tty.usbserial-A104OOO7", { baudrate: 9600 });
+	var rawPort = require("serialport");
+	var SerialPort = rawPort.SerialPort;
+
+	var serialPort = new SerialPort("/dev/tty.usbserial-A104OOO7", { baudrate: 9600, parser: rawPort.parsers.readline('\r') });
 
 	// Add serial objects
 	angular.module('rfidApp').value('serialPort', serialPort);
