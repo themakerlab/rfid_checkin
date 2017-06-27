@@ -1,7 +1,26 @@
 # MakerLab RFID Checkin Electron/Angular App
 
-Cross  plaform rfid reader system for the makerlab
+Cross  platform rfid reader system for the makerlab
 
+  npm install --save-dev electron-rebuild
+
+  ./node_modules/.bin/electron-rebuild
+
+
+`
+  export npm_config_target=1.6.1
+  # The architecture of Electron, can be ia32 or x64.
+  export npm_config_arch=x64
+  export npm_config_target_arch=x64
+  # Download headers for Electron.
+  export npm_config_disturl=https://atom.io/download/electron
+  # Tell node-pre-gyp that we are building for Electron.
+  export npm_config_runtime=electron
+  # Tell node-pre-gyp to build module from source code.
+  export npm_config_build_from_source=true
+  # Install all dependencies, and store cache to ~/.electron-gyp.
+  HOME=~/.electron-gyp npm install
+`
 
 ## Installing on Raspberry Pi
 
@@ -14,7 +33,7 @@ Raspberry Pi software that will control tap flow and pour.
 5. Install bower globally using `npm install bower -g`
 6. Git clone this repo onto Raspberry Pi (I would recommend into Documents but location doesnt matter as long as you remember)
 7. Go into project directory and run `npm install` and `bower install`.
-8. If project doesnt run correctly and inside web inspector you get something about NODE_VERSION is incorrect. 
+8. If project doesnt run correctly and inside web inspector you get something about NODE_VERSION is incorrect.
 Then you need to compile node modules for electron using the following command (http://www.metabase.com/spec/fixtures/test-set-docs/tutorial/using-native-node-modules). `./node_modules/.bin/electron-rebuild`. Everytime you run npm install you must run this as well.
 9. Create a filenamed `.env` in the project root. This will contain project specific variables. Look at ENV Sample
 10. Run the application using `npm start`.
