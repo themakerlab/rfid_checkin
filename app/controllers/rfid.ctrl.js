@@ -1,7 +1,7 @@
 (function () {
-    angular.module('rfidApp').controller('RfidController', ['$scope', 'logger','serialPort', 'googleClientService', RfidCtrl]);
+    angular.module('rfidApp').controller('RfidController', ['$scope', '$timeout', 'logger','serialPort', 'googleClientService', RfidCtrl]);
 
-    function RfidCtrl($scope, logger, serialPort, googleClientService) {
+    function RfidCtrl($scope, $timeout, logger, serialPort, googleClientService) {
         // This will be the base value.
         // $scope.getPorts = function() {
       		//Get the serialport listings
@@ -29,7 +29,7 @@
     		// var serialPort = new SerialPort("/dev/tty.usbserial-A104OOO7", { baudrate: 9600 }); ///dev/cu.usbserial-A104OOO7
         $scope.nfcValue;
         $scope.nfcMessage = "Scan RFID Card";
-        var strData = "";
+
     		//Open the serial data
     		serialPort.open(function () {
     			console.log('open');
@@ -55,7 +55,7 @@
               $scope.nfcValue = $scope.nfcValue.substring(1);
             }
             if ($scope.nfcValue.length == 12) {
-              // Verify ID      
+              // Verify ID
               $scope.results = [];
               $scope.httpStatus = 0;
               $scope.LoadRequest = googleClientService.loadClientList();
@@ -76,11 +76,16 @@
                       $scope.nfcMessage = "Welcome " + results[i]['gsx$name']['$t'];
                       console.log('matched', $scope.nfcMessage);
                       break;
+                    } else {
+                      $scope.nfcMessage = "RFID tag not found. Please rescan"
                     }
                 }
               });
             }
-
+            $timeout(function () {
+                $scope.nfcValue = "";
+                $scope.nfcMessage = "Scan RFID Card";
+            }, 3000);
     			});
 
     		});
